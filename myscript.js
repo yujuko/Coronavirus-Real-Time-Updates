@@ -108,27 +108,39 @@ function plotData(date){
     var deaths = arr_date[i][1].deaths
     var recovered = arr_date[i][1].recovered
     const country_txt = create(`<p id ="country-${country}"></p>`)
-    const country_bar = create(`<div id="myProgress-${country}"><div id="myBar-${country}"></div></div>`)
+    const country_bar = create(`
+    <div id = "bar-container">
+      <div id ="country_tag">${country} </div>
+      <div id ="bar">
+        <div id="myProgress-${country}">
+          ${confirmed}
+          <div id="myBar-${country}">
+            ${recovered}
+          </div>
+        </div>
+      </div>
+    </div>`
+  )
 
       if(i == 0){
         console.log("hi")
         get('left').appendChild(country_txt)
         get('left').appendChild(country_bar)
-        get(`country-${country}`).innerHTML = country+": confirmed: "+confirmed+" /deaths: "+deaths+" /recovered: "+recovered
+        // get(`country-${country}`).innerHTML = country+": confirmed: "+confirmed+" /deaths: "+deaths+" /recovered: "+recovered
         get(`myProgress-${country}`).style.width = confirmed * window.innerWidth /1000 + "px"
         get(`myBar-${country}`).style.width = recovered /confirmed * get(`myProgress-${country}`).style.width + "px"
       }
       else if(i <= 10){
         get('left').appendChild(country_txt)
         get('left').appendChild(country_bar)
-        get(`country-${country}`).innerHTML = country+": confirmed: "+confirmed+" /deaths: "+deaths+" /recovered: "+recovered
+        // get(`country-${country}`).innerHTML = country+": confirmed: "+confirmed+" /deaths: "+deaths+" /recovered: "+recovered
         get(`myProgress-${country}`).style.width = (confirmed/max_confirmed) * window.innerWidth *0.4  + "px"
         get(`myBar-${country}`).style.width = recovered /max_confirmed * window.innerWidth *0.4 + "px"
       }
       else{
         get('middle').appendChild(country_txt)
         get('middle').appendChild(country_bar)
-        get(`country-${country}`).innerHTML = country+": confirmed: "+confirmed+" /deaths: "+deaths+" /recovered: "+recovered
+        // get(`country-${country}`).innerHTML = country+": confirmed: "+confirmed+" /deaths: "+deaths+" /recovered: "+recovered
         get(`myProgress-${country}`).style.width = (confirmed/max_confirmed) * window.innerWidth *0.4 + "px"
         get(`myBar-${country}`).style.width = recovered /max_confirmed * window.innerWidth *0.4 + "px"
       }

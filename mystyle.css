@@ -1,12 +1,12 @@
 body {
     font-family: 'Helvetica';
     /* font-weight: 400; */
-    color: black;
+    /* color: black;
     align-items: center;
     justify-content: center;
     position: relative;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     /* text-shadow: .1em .1em 0 rgba(0,0,0,0.3); */
     /* font-size: 1.3em; */
     height: 100vh;
@@ -36,16 +36,16 @@ body {
 #span_middle{
   height = 40px
 }
-div[id^=myBar]{
-  width: 1%;
-  height: 20px;
-  max-width: 38vw;
-  box-sizing:border-box;
-  background-color: CadetBlue;
+
+#country-tag, #bar{
+  display:inline;
+  text-align: right;
+  font-size: 15px
+
 }
 div[id$="China"]{
   width: 1%;
-  max-width: 68vw;
+  max-width: 65vw;
   height: 20px;
   background-color: FireBrick;
 }
@@ -57,9 +57,10 @@ div[id$="Japan"],div[id$="Thailand"],div[id$="Korea, South"],div[id$="Taiwan*"],
 "Turkey"],div[id$="Kazakhstan"],div[id$="Uzbekistan"]{
   width: 1%;
   height: 20px;
-  max-width: 38vw;
+  max-width: 20vw;
   box-sizing:border-box;
   background-color: LightSalmon;
+  position: relative;
 }
 
 div[id$="Algeria"],div[id$="Nigeria"],div[id$="Morocco"],div[id$="Senegal"],div[id$="Tunisia"],div[id$="South Africa"],div[id$="Cameroon"],div[id$="Togo"],div[id$="Burkina Faso"],div[id$="Congo (Kinshasa)"],div[id$="Cote d'Ivoire"],
@@ -69,7 +70,7 @@ div[id$="Liberia"],div[id$="Republic of the Congo"],div[id$="Somalia"],div[id$="
 {
   width: 1%;
   height: 20px;
-  max-width: 38vw;
+  max-width: 30vw;
   box-sizing:border-box;
   background-color: DarkGoldenRod;
 }
@@ -82,7 +83,7 @@ div[id$="Germany"],div[id$="Finland"],div[id$="Italy"],div[id$="Sweden"],div[id$
 {
   width: 1%;
   height: 20px;
-  max-width: 38vw;
+  max-width: 30vw;
   box-sizing:border-box;
   background-color: CadetBlue;
 }
@@ -93,7 +94,7 @@ div[id$= "Barbados"]
 {
   width: 1%;
   height: 20px;
-  max-width: 38vw;
+  max-width: 30vw;
   box-sizing:border-box;
   background-color: RoyalBlue;
 }
@@ -101,21 +102,29 @@ div[id$="Brazil"],div[id$="Mexico"],div[id$="Ecuador"],div[id$="Argentina"],div[
 "Bolivia"],div[id$="Guyana"],div[id$="Aruba"],div[id$="Uruguay"],div[id$="Trinidad and Tobago"],div[id$="Venezuela"],div[id$= "Suriname"]{
   width: 1%;
   height: 20px;
-  max-width: 38vw;
+  max-width: 30vw;
   box-sizing:border-box;
   background-color: Khaki;
 }
 
 div[id$="Australia"],div[id$="New Zealand"]{
-
   width: 1%;
   height: 20px;
-  max-width: 38vw;
+  max-width: 30vw;
   box-sizing:border-box;
   background-color: LightSlateGray;
 }
+
 div[id^=myBar]{
+  /* text-align: left */
+  position: absolute;
   width:1%;
+  height: 20px;
   background-color: lightgrey;
+  display:inline;
 }
+
+
+
+
 }
